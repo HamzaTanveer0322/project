@@ -12,7 +12,7 @@ app.use(cookieParser())
 app.use('/uploads', express.static('uploads'));
 
 const corsOptions = {
-    origin: ['http://localhost:5173'], // Allowed origins
+    origin: ['http://deploy-mern-1whq.vercel.app'], // Allowed origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
     credentials: true, // Allow credentials (e.g., cookies) to be sent
    // For legacy browser support
