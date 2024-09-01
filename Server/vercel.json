@@ -1,1 +1,32 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Blog/package.json",
+      "use": "@vercel/node",
+      "config": {
+        "distDir": "Blog/build"
+      }
+    },
+    {
+      "src": "Server/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/Blog/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/Server/index.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "MONGO_URI": "@mongo_uri", 
+    "JWT_SECRET": "@jwt_secret"
+  }
+}
 
